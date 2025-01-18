@@ -47,4 +47,29 @@ public class DbServiceTest {
     assertNotNull(list, "User list is null.");
     assertEquals(2, list.size());
   }
+  
+  @Test
+  public void testUserById() {
+    log.info("Context: {}", ctx);
+    assertNotNull(ctx, "Spring context is null");
+    assertNotNull(dbService, "Db service is null");
+    
+    User user = dbService.getUserUsingRepository(1);
+    assertNotNull(user, "User is null.");
+    assertEquals("USER1", user.getName());
+    log.info("User: {}", user);
+  }
+  
+  @Test
+  public void testCountryById() {
+    log.info("Context: {}", ctx);
+    assertNotNull(ctx, "Spring context is null");
+    assertNotNull(dbService, "Db service is null");
+    
+    Country country = dbService.getCountryUsingRepository(1);
+    assertNotNull(country, "Country is null.");
+    assertEquals("AUSTRALIA", country.getName());
+    log.info("User: {}", country);
+  }
+  
 }

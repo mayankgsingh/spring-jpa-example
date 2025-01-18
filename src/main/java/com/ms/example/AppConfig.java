@@ -23,6 +23,8 @@ public class AppConfig {
     log.info("Query country db...");
     dbService.getCountries();
     
+    log.info("User by id: {}", dbService.getUserUsingRepository(1));
+    
     log.info("Closing context...");
     ctx.close();
     

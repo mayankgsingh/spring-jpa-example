@@ -7,8 +7,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.ms.example.countrydb.Country;
+import com.ms.example.countrydb.CountryRepository;
 import com.ms.example.userdb.User;
+import com.ms.example.userdb.UserRepository;
 
+import jakarta.annotation.Resource;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
@@ -24,6 +27,12 @@ public class DbService {
   
   @PersistenceContext(unitName = "country")
   private EntityManager emCountry;
+  
+  @Resource
+  private UserRepository userRepository;
+  
+  @Resource
+  private CountryRepository countryRepository;
   
   public List<User> getUsers() {
     CriteriaBuilder cb = emUser.getCriteriaBuilder();
@@ -47,4 +56,13 @@ public class DbService {
     log.info("Country: {}", countries);
     return countries;
   }
+  
+  public User getUserUsingRepository(final Integer id) {
+    return userRepository.findById(id).orElse(null);
+  }
+  
+  
+   public Country getCountryUsingRepository(final Integer id) {
+     return countryRepository.findById(id).orElse(null);
+   }
 }
