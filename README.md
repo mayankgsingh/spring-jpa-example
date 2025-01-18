@@ -11,10 +11,10 @@ This project has been created to exemplify handling of multiple database connect
 - JPA 3
 
 ## Setup
-1. Two sqlite databases/file has been created and are placed under main/src/resources
--- `user.db` --> It has user table
--- `country.db` --> It has country table
--- Entity beans are placed under `com.ms.example.xxxdb` package
+Two sqlite databases/file has been created and are placed under main/src/resources
+  - `user.db` --> It has `user` table with 2 records
+  - `country.db` --> It has `country` table with 2 records
+  - Entity beans are placed under `com.ms.example.xxxdb` package
 
 ## Configurations
 1. `AppConfig.java` has `main()` method which initialises Springs` application context.
