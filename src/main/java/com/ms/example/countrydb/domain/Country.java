@@ -1,4 +1,4 @@
-package com.ms.example.countrydb;
+package com.ms.example.countrydb.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

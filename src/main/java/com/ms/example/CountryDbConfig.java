@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableJpaRepositories(
-    basePackages = "com.ms.example.countrydb",
+    basePackages = {"com.ms.example.countrydb.domain", "com.ms.example.countrydb.repository"},
     entityManagerFactoryRef = "countryEntityManagerFactory",
     transactionManagerRef = "countryTransactionManager"
     )
@@ -31,7 +31,7 @@ public class CountryDbConfig {
   public LocalContainerEntityManagerFactoryBean countryEntityManagerFactory() {
     LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
     em.setDataSource(countryDataSource());
-    em.setPackagesToScan("com.ms.example.countrydb");
+    em.setPackagesToScan("com.ms.example.countrydb", "com.ms.example.countrydb.repository");
     em.setPersistenceUnitName("country");
 
     JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();

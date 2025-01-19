@@ -1,4 +1,4 @@
-package com.ms.example.userdb;
+package com.ms.example.userdb.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

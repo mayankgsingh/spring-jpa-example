@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import com.ms.example.countrydb.Country;
-import com.ms.example.userdb.User;
+import com.ms.example.countrydb.domain.Country;
+import com.ms.example.userdb.domain.User;
 
 @SpringJUnitConfig(classes = TestConfig.class)
 public class DbServiceTest {

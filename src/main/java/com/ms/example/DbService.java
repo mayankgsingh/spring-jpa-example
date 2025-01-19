@@ -6,10 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.ms.example.countrydb.Country;
-import com.ms.example.countrydb.CountryRepository;
-import com.ms.example.userdb.User;
-import com.ms.example.userdb.UserRepository;
+import com.ms.example.countrydb.domain.Country;
+import com.ms.example.countrydb.repository.CountryRepository;
+import com.ms.example.userdb.domain.User;
+import com.ms.example.userdb.repository.UserRepository;
 
 import jakarta.annotation.Resource;
 import jakarta.persistence.EntityManager;

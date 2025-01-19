@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableJpaRepositories(
-    basePackages = "com.ms.example.userdb",
+    basePackages = {"com.ms.example.userdb.domain", "com.ms.example.userdb.repository"},
     entityManagerFactoryRef = "userEntityManagerFactory",
     transactionManagerRef = "userTransactionManager"
     )
@@ -31,7 +31,7 @@ public class UserDbConfig {
   public LocalContainerEntityManagerFactoryBean userEntityManagerFactory() {
     LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
     em.setDataSource(userDataSource());
-    em.setPackagesToScan("com.ms.example.userdb");
+    em.setPackagesToScan("com.ms.example.userdb.domain", "com.ms.example.userdb.repository");
     em.setPersistenceUnitName("user");
 
     JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();

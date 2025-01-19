@@ -14,7 +14,8 @@ This project has been created to exemplify handling of multiple database connect
 Two sqlite databases/file has been created and are placed under main/src/resources
   - `user.db` --> It has `user` table with 2 records
   - `country.db` --> It has `country` table with 2 records
-  - Entity beans are placed under `com.ms.example.xxxdb` package
+  - Entity beans are placed under `com.ms.example.xxxdb.domain` package
+  - Repository beans are placed under `com.ms.example.xxxdb.repository` package
 
 ## Configurations
 1. `AppConfig.java` has `main()` method which initialises Springs` application context.
